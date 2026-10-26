@@ -1,0 +1,14 @@
+# 本仓库在 Python 3.10.13 / CUDA 12.1 / RTX 2080 Ti 22GB / torch 2.1.0+cu121 下完成全部实验。
+# torch 与 torchvision 不在此处安装：请使用与你的 CUDA 匹配的版本
+# （本实验为 torch==2.1.0+cu121、torchvision==0.16.0），否则 04_train.py 的 torch.cuda.amp API 不可用。
+numpy>=1.23,<2.0            # 必须 <2：torch 2.1.0 是针对 NumPy 1.x 编译的二进制
+opencv-python-headless>=4.8,<4.12
+scikit-image>=0.21,<0.25
+matplotlib>=3.7
+PyYAML>=6.0
+tqdm>=4.66
+Pillow>=9.5
+# 仅 Step 09-12（YOLOv8n 自动检测框）需要。安装时请勿让它把 opencv-python 升到 5.x：
+#   pip install "ultralytics>=8.0,<9" --no-deps
+# 否则 opencv-python 5.x 会强制 numpy>=2，直接破坏 torch 2.1.0（见 README「环境陷阱」）。
+ultralytics>=8.0,<9

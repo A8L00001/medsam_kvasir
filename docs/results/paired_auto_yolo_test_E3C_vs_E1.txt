@@ -1,0 +1,29 @@
+Automatic YOLO -> MedSAM paired analysis | split=test, conf=0.1
+Number of independent images: 100 | bootstrap resamples: 5000
+Fixed YOLO detections are identical for E1 and E3C.
+Positive differences favor E3C except HD95, where negative is better.
+
+ALL: n=100
+  dice: E1=0.889694, E3C=0.891627, change=+0.001934, 95% image-bootstrap CI=[-0.004397, +0.007646] (absolute fraction); improved/worsened/tied=53/47/0
+  iou: E1=0.832191, E3C=0.837497, change=+0.005305, 95% image-bootstrap CI=[-0.001978, +0.012702] (absolute fraction); improved/worsened/tied=53/47/0
+  boundary_f1_2px: E1=0.625859, E3C=0.637498, change=+0.011639, 95% image-bootstrap CI=[-0.002112, +0.025583] (absolute fraction); improved/worsened/tied=56/44/0
+  hd95_pixels: E1=57.697897, E3C=56.922371, change=-0.775525, 95% image-bootstrap CI=[-2.958465, +1.355878] (px); improved/worsened/tied=51/40/9
+
+SINGLE BOX: n=80
+  dice: E1=0.939788, E3C=0.943318, change=+0.003530, 95% image-bootstrap CI=[-0.001086, +0.008553] (absolute fraction); improved/worsened/tied=42/38/0
+  iou: E1=0.895761, E3C=0.901940, change=+0.006179, 95% image-bootstrap CI=[-0.000980, +0.013739] (absolute fraction); improved/worsened/tied=42/38/0
+  boundary_f1_2px: E1=0.689450, E3C=0.702376, change=+0.012926, 95% image-bootstrap CI=[-0.002007, +0.028913] (absolute fraction); improved/worsened/tied=45/35/0
+  hd95_pixels: E1=26.538380, E3C=25.129687, change=-1.408693, 95% image-bootstrap CI=[-3.569294, +0.780960] (px); improved/worsened/tied=45/26/9
+
+MULTIPLE BOXES: n=20
+  dice: E1=0.689314, E3C=0.684865, change=-0.004449, 95% image-bootstrap CI=[-0.030692, +0.016347] (absolute fraction); improved/worsened/tied=11/9/0
+  iou: E1=0.577912, E3C=0.579724, change=+0.001812, 95% image-bootstrap CI=[-0.020264, +0.023155] (absolute fraction); improved/worsened/tied=11/9/0
+  boundary_f1_2px: E1=0.371499, E3C=0.377986, change=+0.006487, 95% image-bootstrap CI=[-0.021343, +0.034682] (absolute fraction); improved/worsened/tied=11/9/0
+  hd95_pixels: E1=182.335961, E3C=184.093107, change=+1.757146, 95% image-bootstrap CI=[-5.316063, +7.861274] (px); improved/worsened/tied=6/14/0
+
+Five lowest E3C Dice examples (for qualitative failure analysis):
+  cju1dg44i4z3w0801nyz4p6zf | boxes=2 | E1=0.0831 | E3C=0.0568 | delta=-0.0263
+  cju34uhepd3dd0799hs8782ad | boxes=4 | E1=0.2051 | E3C=0.2052 | delta=+0.0001
+  cju1ewnoh5z030855vpex9uzt | boxes=3 | E1=0.4613 | E3C=0.2524 | delta=-0.2090
+  cju2uzabhs6er0993x3aaf87p | boxes=2 | E1=0.3879 | E3C=0.3855 | delta=-0.0024
+  cju33231uy4gi0993qc7b1jch | boxes=1 | E1=0.4584 | E3C=0.4441 | delta=-0.0143

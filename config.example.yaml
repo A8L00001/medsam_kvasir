@@ -1,0 +1,23 @@
+# 复制为 config.yaml 后使用：cp config.example.yaml config.yaml
+# 四个路径留空时，00_preflight.py 会在 --scan-root 范围内自动搜索并回填唯一候选。
+project:
+  work_dir: ./outputs      # 相对于项目根目录
+  seed: 42
+data:
+  images_dir: null         # 例：/data/kvasir-seg/images
+  masks_dir: null          # 例：/data/kvasir-seg/masks
+model:
+  medsam_repo: null        # 官方 MedSAM 仓库根目录，需包含 segment_anything/
+  checkpoint: null         # 官方 medsam_vit_b.pth（不是原始 SAM ViT-B 权重）
+training:
+  batch_size: 4
+  num_workers: 2
+  epochs: 40
+  patience: 8
+  lr: 0.0001
+  weight_decay: 0.01
+  box_jitter_px: 20
+  boundary_lambda: 0.2
+  consistency_lambda: 0.1
+  consistency_box_ratio: 0.1
+  amp: true

@@ -1,0 +1,30 @@
+{
+  "split": "test",
+  "n_images": 100,
+  "box_source": "YOLOv8n PREDICTED boxes only (no GT boxes used for prompts)",
+  "yolo_weights": "outputs/yolo_runs/polyp_v8n/weights/best.pt",
+  "confidence_threshold": 0.1,
+  "nms_iou": 0.5,
+  "imgsz": 640,
+  "max_det": 10,
+  "zero_detection_images": 0,
+  "multiple_detection_images": 20,
+  "total_predicted_boxes": 127,
+  "warning": "All images included in segmentation means, even those with zero YOLO detections; empty prediction scored vs GT.",
+  "models": {
+    "E1": {
+      "mean_dice_detected_only": 0.8896935640281458,
+      "mean_dice": 0.8896935640281458,
+      "mean_iou": 0.8321912952810674,
+      "mean_boundary_f1_2px": 0.6258594506800634,
+      "mean_hd95_pixels": 57.69789653468131
+    },
+    "E3C": {
+      "mean_dice_detected_only": 0.8916274736146138,
+      "mean_dice": 0.8916274736146138,
+      "mean_iou": 0.8374966346448312,
+      "mean_boundary_f1_2px": 0.6374979695387477,
+      "mean_hd95_pixels": 56.92237135982513
+    }
+  }
+}

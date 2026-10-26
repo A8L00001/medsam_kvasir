@@ -1,0 +1,25 @@
+# ---- 本机配置（含绝对路径，不入库；模板见 config.example.yaml）----
+config.yaml
+
+# ---- 运行产物：特征缓存约 2 GB，checkpoint 约 400 MB ----
+outputs/
+archive/
+
+# ---- 权重与数组 ----
+weights/
+*.pt
+*.pth
+*.npy
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# ---- 编辑器 / 系统 ----
+.DS_Store
+.vscode/
+.idea/
+*.log
